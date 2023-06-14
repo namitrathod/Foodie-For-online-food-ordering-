@@ -1,0 +1,4 @@
+ <div class="form-group has-search d-none d-lg-block">  <!--// to make it visible only on lg and above devices -->
+    <span class="fa fa-search form-control-feedback" (click)="search(s.value)"></span>
+    <input #s type="text" class="form-control" placeholder="Search" (keyup.enter)="search(s.value)" [value]="searchTerm">
+  </div>

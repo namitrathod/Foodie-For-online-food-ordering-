@@ -1,1 +1,43 @@
-<p>home works!</p>
+<ul>
+    <div class="container">
+    <div *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <div class="card mt-5 me-4 " style="width: 18rem;">
+
+                <div class="container1">
+                    <img [src]="food.imageUrl" class="card-img-top" alt="food.name">
+                    <div class="bottom-right">{{food.cookTime}} min</div>
+                    <div class="bottom-left">50% OFF </div>
+                  </div>
+
+                <!-- <img [src]="food.imageUrl" class="card-img-top" alt="food.name"> -->
+                <div class="card-body">
+                  <span class="card-title">{{food.name}}</span>
+                  <span class="favorite  {{food.favorite?'':'not'}} "style="float:right;">♥</span>
+                  <div>
+                      <ngb-rating [rate]="food.stars"></ngb-rating>
+                      <span style="float:right;">200 per person</span>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <!-- </div> -->
+</ul>
+
+<!-- <div class="product-container">
+    <div class="product-item" *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <div class="card" style="width: 18rem;">
+                <img [src]="food.imageUrl" class="card-img-top" alt="food.name">
+                <div class="card-body">
+                  <h5 class="card-title">{{food.name}}</h5>
+                  <div class="favorite {{food.favorite?'':'not'}}">♥</div>
+                  <ngb-rating [rate]="food.stars"></ngb-rating>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            </a>
+    </div>
+  </div> -->
