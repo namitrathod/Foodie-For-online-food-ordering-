@@ -19,7 +19,13 @@ export class FoodService {
       // console.log(re);
       
       return this.getAll().filter((food)=>food.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }
 
-      
+  //Get food by Id 
+  getFoodById(foodId:string){
+    const r = this.getAll().find((food)=>{food.id})?? new food();// not working find the reason
+    console.log(r);
+    
+    return this.getAll().find((food) =>food.id == foodId)?? new food();
   }
 }
