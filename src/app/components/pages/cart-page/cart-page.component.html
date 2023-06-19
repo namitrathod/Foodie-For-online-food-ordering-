@@ -1,4 +1,6 @@
 <app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found [visible]="!cart || !cart.item.length" 
+    notFoundMessage="Cart is Empty"></app-not-found>
 <!-- <div class="container">
     <ul>
         <li *ngFor="let cartItem of cart.item">
@@ -31,7 +33,7 @@
 </div> -->
 
 
-<section class="h-100 h-custom" style="background-color: #eee;">
+<section *ngIf="cart && cart.item.length" class="h-100 h-custom" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
